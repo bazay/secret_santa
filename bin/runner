@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'pry'
+require_relative '../lib/secret_santa'
+
+raise ArgumentError.new 'Please provide the file path to the csv for parsing' if ARGV[0].nil?
+
+runner = SecretSanta::Runner.new(ARGV[0]).call
